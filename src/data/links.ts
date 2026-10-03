@@ -19,7 +19,7 @@ export const primaryLinks: { label: string; icon: IconName; href: string }[] = [
 ];
 
 export const socialLinks: { label: string; icon: IconName; href: string }[] = [
-  { label: "Call Me", icon: "phone", href: "tel:+1234567890" },
+  { label: "Call me", icon: "phone", href: "tel:+1234567890" },
   { label: "Send mail", icon: "email", href: "chukwukaaulli@gmail.com" },
   { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/" },
   { label: "WhatsApp", icon: "whatsapp", href: "https://wa.me/" },
