@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --animate-internship-beam: internship-beam 1.5s ease-in-out infinite;
+
+  @keyframes internship-beam {
+    0%,
+    100% {
+      border-color: rgb(255 90 61 / 0.25);
+      box-shadow: 0 0 0 rgb(255 90 61 / 0);
+    }
+
+    50% {
+      border-color: rgb(255 90 61 / 1);
+      box-shadow:
+        0 0 0 3px rgb(255 90 61 / 0.1),
+        0 0 5px rgb(255 90 61 / 0.2);
+    }
+  }
+}
+
+@custom-variant tall (@media (min-height: 700px));
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
