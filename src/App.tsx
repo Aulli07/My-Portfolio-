@@ -1,9 +1,13 @@
+import {lazy, Suspense} from "react";
+
 import { Header } from "./ui/header";
 import { FirstView } from "./ui/first-view";
 import { MyStats } from "./ui/first-view";
 import { AboutMe } from "./ui/about";
 import { BuildClasses } from "./ui/services";
-import { Projects } from "./ui/projects";
+
+const Projects = lazy(() => import ("./ui/projects").then((module) => ({ default: module.Projects })));
+
 import { Skills } from "./ui/skills";
 import { Messages } from "./ui/contact";
 import { Footer } from "./ui/footer";
@@ -16,7 +20,9 @@ export function App() {
       <MyStats />
       <AboutMe />
       <BuildClasses />
-      <Projects />
+      <Suspense fallback={<div className="animate-pulse rounded-xl" />}>
+        <Projects />
+      </Suspense>
       <Skills />
       <Messages />
       <Footer />

@@ -1,11 +1,26 @@
+import { useState } from "react";
+
 import mainMe from "../assets/me-pics/main-me.jpg";
 import { statClasses } from "../data/info";
 
 import { FaEye, FaDownload } from "react-icons/fa6";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 
 export function FirstView() {
+  const [ downloadShow, setDownloadShow ] = useState(false);  
+
+  function handleDownload() {
+    const d = document.createElement("a");
+    d.href = "../assets/download/my-resume.pdf";
+    d.download = "Ollie-CV.pdf"
+    d.click();
+
+    setDownloadShow(true);
+    setTimeout(() => setDownloadShow(false), 3000)
+  }
+
   return (
     <main className="bg-gradient-to-b from-[#ffffff] via-[#fff6f3]/[0.1] to-[#ff5a3d]/[0.1]">
       <section
@@ -39,12 +54,12 @@ export function FirstView() {
           </a>
 
           <a
-            href="/resume.pdf"
-            download
+            onClick={handleDownload}
             className="flex items-center gap-1.5 md:gap-4 rounded-lg border border-[#ff5a3d] bg-white px-3 md:px-5 py-2 md:py-3 text-sm md:text-2xl font-bold font-sans text-[#ff5a3d] transition-colors hover:bg-[#fff1ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a3d] focus-visible:ring-offset-2 "
           >
             <FaDownload className="md:inline size-4 md:size-6" />
             <span>Download Resume</span>
+            <DownloadAnimateUI downloadShow={downloadShow}/>
           </a>
         </div>
       </section>
@@ -75,5 +90,32 @@ export function MyStats() {
         ))}
       </section>
     </main>
+  )
+}
+
+function DownloadAnimateUI({downloadShow} : {downloadShow: boolean}) {
+  return (
+    <div className="pointer-events-none fixed inset-x-0 top-6 z-50 flex justify-center">
+      <AnimatePresence>
+        {downloadShow && (
+          <motion.div
+            initial={{ opacity: 0, y: -40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -40, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="pointer-events-auto w-45 bg-white border border-[#ff5a3d] overflow-hidden rounded-xl shadow-xl"
+            role="status"
+          >
+            <div className="px-3 py-2 text-sm text-[#151618]/70 font-sans font-semibold">Downloading...</div>
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 3, ease: "linear" }}
+              className="h-1 origin-left bg-[#ff5a3d]"
+            />
+          </motion.div>
+        )}  
+      </AnimatePresence>
+    </div>
   )
 }
