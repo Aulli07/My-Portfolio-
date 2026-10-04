@@ -14,18 +14,18 @@ export function Projects() {
 
   return (
     <main className="bg-gradient-to-b from-[#ffffff] via-[#fff6f3]/[0.1] to-[#ff5a3d]/[0.1]">
-      <section id="projects" className="mx-auto w-full max-w-6xl px-4 py-16 md:px-8 md:py-20 lg:py-30 lg:px-16">
-        <h2 className="px-1 text-2xl font-bold tracking-tight text-[#151618] font-sans md:px-2 md:text-5xl lg:text-6xl lg:flex justify-center">
+      <section id="projects" className="mx-auto w-full max-w-6xl px-4 py-16 md:px-12 md:py-20 lg:py-30 lg:px-16">
+        <h2 className="px-1 text-3xl font-bold tracking-tight text-[#151618] font-sans md:px-2 md:text-5xl lg:text-6xl lg:flex justify-center">
           What I have built
         </h2>
 
-        <div className="mt-8 grid gap-8 md:mt-12 lg:mt-14 md:gap-10 lg:gap-12">
+        <div className="mt-8 grid gap-6 md:mt-12 lg:mt-14 md:gap-10 lg:gap-12">
           {myProjects.map((project) => (
             <article
               key={project.name}
-              className="overflow-hidden rounded-2xl border border-[#f3dfd8] bg-white p-5 shadow-sm shadow-[#2c1a1510] transition duration-200 hover:border-[#ff9b86] hover:shadow-md hover:shadow-[#ff5a3d]/10 md:rounded-3xl md:p-8"
+              className="overflow-hidden rounded-2xl border border-[#f3dfd8] bg-white p-4 md:p-6 shadow-sm shadow-[#2c1a1510] transition duration-200 hover:border-[#ff9b86] hover:shadow-md hover:shadow-[#ff5a3d]/10 md:rounded-3xl"
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-center justify-between gap-4">
                 <h3 className="font-sans text-2xl font-bold tracking-tight text-[#151618] md:text-4xl lg:text-4.5xl">
                   {project.name}
                 </h3>
@@ -54,7 +54,7 @@ export function Projects() {
                 </div>
               </div>
 
-              <div className="mt-3 flex flex-wrap gap-2 md:mt-5 md:gap-3">
+              <div className="mt-3 flex flex-wrap gap-x-2 gap-y-1 md:mt-5 md:gap-3">
                 {project.skills.map((skill) => (
                   <span key={skill} className="rounded-full bg-[#fff1ec] px-3 py-1 text-xs md:text-sm lg:text-lg font-medium font-sans text-[#b3432f] md:px-4 md:py-1.5 ">
                     {skill}
@@ -62,11 +62,11 @@ export function Projects() {
                 ))}
               </div>
 
-              <p className="mt-5 max-w-3xl font-sans text-base leading-7 text-[#6f7480] md:mt-7 lg:mt-9 md:text-xl lg:text-2xl md:leading-8">
+              <p className="mt-4 max-w-3xl font-sans text-base leading-6 text-[#6f7480] md:mt-7 lg:mt-9 md:text-xl lg:text-2xl md:leading-8">
                 {project.description}
               </p>
 
-              <div className="relative mt-6 md:mt-8 lg:mt-10">
+              <div className="relative mt-5 md:mt-7 lg:mt-9">
                 <img src={project.images.at(imageSlot)} alt={`${project.name} project preview`} className="h-45 md:h-70 lg:h-80 w-full rounded-xl border border-[#ffded5] object-cover shadow-sm shadow-[#2c1a1510] md:rounded-2xl" />
 
                 <button
@@ -89,7 +89,7 @@ export function Projects() {
               </div>
 
               {!project.devtComplete && (
-                <p className="mt-4 md:mt-6 text-sm md:text-base lg:text-lg font-medium text-[#b3432f] font-sans tracking-normal">Currently in development</p>
+                <p className="mt-3 md:mt-5 text-sm md:text-base lg:text-lg font-medium text-[#b3432f] font-sans tracking-normal">Currently in development</p>
               )}
             </article>
           ))}

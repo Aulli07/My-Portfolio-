@@ -4,8 +4,8 @@ import { buildClasses } from "../data/info"
 
 export function BuildClasses () {
   return (
-    <section id="services" className="mx-auto w-full max-w-6xl px-4 py-16 md:px-8 md:py-20 lg:py-30 lg:px-16">
-      <h2 className="px-1 text-2xl font-bold tracking-tight text-[#151618] font-sans md:px-2 md:text-5xl lg:text-6xl lg:flex justify-center">
+    <section id="services" className="mx-auto w-full max-w-6xl px-4 py-16 md:px-12 md:py-20 lg:py-30 lg:px-16">
+      <h2 className="px-1 text-3xl font-bold tracking-tight text-[#151618] font-sans md:px-2 md:text-5xl lg:text-6xl lg:flex justify-center">
         What do I build
       </h2>
 

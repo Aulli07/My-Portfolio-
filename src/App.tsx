@@ -1,5 +1,7 @@
 import {lazy, Suspense} from "react";
 
+import { Reveal } from "./components/reveal";
+
 import { Header } from "./ui/header";
 import { FirstView } from "./ui/first-view";
 import { MyStats } from "./ui/first-view";
@@ -9,7 +11,7 @@ import { BuildClasses } from "./ui/services";
 const Projects = lazy(() => import ("./ui/projects").then((module) => ({ default: module.Projects })));
 
 import { Skills } from "./ui/skills";
-import { Messages } from "./ui/contact";
+import { Contact } from "./ui/contact";
 import { Footer } from "./ui/footer";
 
 export function App() {
@@ -18,13 +20,13 @@ export function App() {
       <Header />
       <FirstView />
       <MyStats />
-      <AboutMe />
-      <BuildClasses />
+      <Reveal><AboutMe /></Reveal>
+      <Reveal><BuildClasses /></Reveal>
       <Suspense fallback={<div className="animate-pulse rounded-xl" />}>
-        <Projects />
+        <Reveal><Projects /></Reveal>
       </Suspense>
-      <Skills />
-      <Messages />
+      <Reveal><Skills /></Reveal>
+      <Reveal><Contact /></Reveal>
       <Footer />
     </main>
   )

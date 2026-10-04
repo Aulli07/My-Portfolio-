@@ -2,7 +2,7 @@ import type { IconType } from "react-icons";
 import { FaCalendarDays, FaFolderOpen } from "react-icons/fa6"
 import {
   FaBuilding, FaCode,
-  FaRegAddressCard, FaRocket,
+  FaRegAddressCard, FaRocket, FaLaptopCode
 } from "react-icons/fa6";
 
 import mainMe from "../assets/me-pics/main-me.jpg";
@@ -21,6 +21,11 @@ export const statClasses : { title: string; count: number; icon: IconType }[] = 
     title: "Years of experience",
     count: 2,
     icon: FaCalendarDays,
+  },
+  {
+    title: "Technologies used",
+    count: 8,
+    icon: FaLaptopCode
   },
 ];
 
@@ -101,6 +106,7 @@ export const skillRows = [
   ["React", "TypeScript", "JavaScript"],
   ["HTML", "CSS", "Tailwind CSS", "Node.js"],
   ["Git", "GitHub", "Figma"],
+  ["Framer Motion", "Zustand"]
 ];
 
 export const pillStyles = [

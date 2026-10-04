@@ -15,10 +15,10 @@ export function Header() {
   if (!mounted) return null;
 
   return (
-    <header className="sticky top-0 z-40 bg-[#fffdfb]/15 pt-3 backdrop-blur px-3 md:px-8 lg:px-32">
+    <header className="sticky top-0 z-40 bg-[#fffdfb]/10 pt-3 backdrop-blur px-4 md:px-12 lg:px-32">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl border border-[#f3dfd8] bg-white/50 backdrop-blur-md px-3 shadow-sm shadow-[#2c1a1510] md:px-7">
-        <a href="#home" className="text-lg font-bold tracking-tight text-[#151618] md:text-xl lg:text-2xl">
-          <span className="text-[#ff5a3d] tracking-tight font-bold font-sans text-xl md:text-2xl lg:text-3xl">Alwell</span>.dev
+        <a href="#home" className="text-lg font-bold tracking-tight font-sans text-[#151618] md:text-xl lg:text-2xl">
+          <span className="text-[#ff5a3d] tracking-tight font-bold text-xl md:text-2xl lg:text-3xl">Alwell</span>.dev
         </a>
 
         <nav className="hidden md:flex items-center justify-between w-[60%]">
