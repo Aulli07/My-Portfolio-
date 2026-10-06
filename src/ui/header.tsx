@@ -12,8 +12,8 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
 
+  if (!mounted) return null;
   return (
     <header className="sticky top-0 z-40 bg-[#fffdfb]/10 pt-3 backdrop-blur px-4 md:px-12 lg:px-32">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl border border-[#f3dfd8] bg-white/50 backdrop-blur-md px-3 shadow-sm shadow-[#2c1a1510] md:px-7">

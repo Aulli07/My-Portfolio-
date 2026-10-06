@@ -1,42 +1,51 @@
 import { useState } from "react";
 
 import mainMe from "../assets/me-pics/main-me.jpg";
+import myCV from "../assets/doc/Alwell_CV.pdf"
 import { statClasses } from "../data/info";
 
 import { FaEye, FaDownload } from "react-icons/fa6";
 import { AnimatePresence, motion } from "framer-motion";
-
-
+import { ActionLink } from "../components/action-link";
+import { ContentCard } from "../components/content-card";
 
 export function FirstView() {
-  const [ downloadShow, setDownloadShow ] = useState(false);  
+  const [downloadShow, setDownloadShow] = useState(false);
 
   function handleDownload() {
     const d = document.createElement("a");
-    d.href = "../assets/download/my-resume.pdf";
-    d.download = "Ollie-CV.pdf"
+    d.href = "My Resume.pdf";
+    d.download = myCV;
     d.click();
 
     setDownloadShow(true);
-    setTimeout(() => setDownloadShow(false), 3000)
+    setTimeout(() => setDownloadShow(false), 3000);
   }
 
   return (
     <main className="bg-gradient-to-b from-[#ffffff] via-[#fff6f3]/[0.1] to-[#ff5a3d]/[0.1]">
       <section
-      id="home"
-      className="mx-auto flex w-full pt-16 lg:pt-10 pb-18 md:py-20 md:pb-35 max-w-6xl scroll-mt-20 flex-col justify-center gap-4 px-4 md:px-12 lg:px-22 lg:py-24 lg:items-center"
+        id="home"
+        className="mx-auto flex w-full pt-16 lg:pt-10 pb-18 md:py-20 md:pb-35 max-w-6xl scroll-mt-20 flex-col justify-center gap-4 px-4 md:px-12 lg:px-22 lg:py-24 lg:items-center"
       >
-        <p className="text-xs w-fit p-2 text-[#ff5a3d] font-sans font-medium border rounded-full animate-internship-beam motion-reduce:animate-none md:text-lg md:p-3 md:font-bold md:tracking-normal">Open to internship</p>
+        <p className="text-xs w-fit p-2 text-[#ff5a3d] font-sans font-medium border rounded-full animate-internship-beam motion-reduce:animate-none md:text-lg md:p-3 md:font-bold md:tracking-normal">
+          Open to internship
+        </p>
 
         <div className="lg:flex lg:flex-col lg:items-center lg:justify-center mt-5 max-w-3xl space-y-4 md:space-y-6">
-          
-          <img src={mainMe} alt="My pic" className="rounded-full size-32 inset-0 object-cover width={100} height={100} border border-[#ff5a3d] md:size-40 lg:size-45" />
+          <img
+            src={mainMe}
+            alt="My pic"
+            className="rounded-full size-32 inset-0 object-cover width={100} height={100} border border-[#ff5a3d] md:size-40 lg:size-45"
+          />
 
-          <p className="text-lg text-[#151618]/70 md:text-3xl tracking-wide font-sans">Hi, I&apos;m Alwell.</p>
+          <p className="text-lg text-[#151618]/70 md:text-3xl tracking-wide font-sans">
+            Hi, I&apos;m Alwell.
+          </p>
 
           <h1 className="max-w-3xl w-[90%] lg:w-full text-3xl font-bold leading-[1.05] tracking-tight text-[#151618] md:text-5xl lg:text-5xl font-sans lg:text-center ">
-            Frontend developer learning and building thoughtful digital products.
+            Frontend developer learning and building thoughtful digital
+            products.
           </h1>
 
           {/* <p className="hidden max-w-2xl font-sans text-md leading-6 text-[#51545a] sm:text-xl sm:leading-9 tall:block">
@@ -45,26 +54,25 @@ export function FirstView() {
         </div>
 
         <div className="flex flex-wrap lg:pb-30 gap-3 md:gap-5 mt-3 md:mt-6">
-          <a
+          <ActionLink
             href="#projects"
-            className="flex items-center gap-1.5 md:gap-4 rounded-xl bg-[#ff5a3d] px-3 md:px-5 py-2 md:py-3 text-sm md:text-2xl font-bold font-sans text-white transition-colors hover:bg-[#ef482d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a3d] focus-visible:ring-offset-2"
+            icon={<FaEye className="size-4 md:size-6" />}
           >
-            <FaEye className=" size-4 md:size-6 md:inline" />
-            <span>View my work</span>
-          </a>
+            View my work
+          </ActionLink>
 
-          <a
+          <ActionLink
             onClick={handleDownload}
-            className="flex items-center gap-1.5 md:gap-4 rounded-lg border border-[#ff5a3d] bg-white px-3 md:px-5 py-2 md:py-3 text-sm md:text-2xl font-bold font-sans text-[#ff5a3d] transition-colors hover:bg-[#fff1ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a3d] focus-visible:ring-offset-2 "
+            icon={<FaDownload className="size-4 md:size-6" />}
+            variant="secondary"
           >
-            <FaDownload className="md:inline size-4 md:size-6" />
-            <span>Download Resume</span>
-            <DownloadAnimateUI downloadShow={downloadShow}/>
-          </a>
+            <DownloadAnimateUI downloadShow={downloadShow} />
+            Download Resume
+          </ActionLink>
         </div>
       </section>
     </main>
-  )
+  );
 }
 
 export function MyStats() {
@@ -72,9 +80,9 @@ export function MyStats() {
     <main className="bg-gradient-to-b from-[#ff5a3d]/[0.1] via-[#fff6f3]/70 to-[#ff5a3d]/[0.07]">
       <section className="mx-auto grid w-full max-w-6xl grid-rows-2 md:grid-cols-2 gap-3 px-4 py-6 md:gap-4 md:px-12 md:py-8 lg:px-16">
         {statClasses.map(({ title, count, icon: Icon }) => (
-          <article
+          <ContentCard
             key={title}
-            className="flex items-center gap-3 md:gap-5 rounded-2xl border border-[#f3dfd8] p-3 bg-white transition duration-200 sm:p-4 hover:border-[#ff5a3d] min-h-24 md:odd:last:col-span-2 md:odd:last:justify-self-center md:odd:last:w-[calc(55%-0.5rem)]"
+            className="flex min-h-24 items-center gap-3 p-3 transition duration-200 hover:border-[#ff5a3d] sm:p-4 md:gap-5 md:odd:last:col-span-2 md:odd:last:justify-self-center md:odd:last:w-[calc(55%-0.5rem)]"
           >
             <div className="grid size-10 md:size-10 shrink-0 place-items-center rounded-xl transition-colors bg-[#ff5a3d] text-white">
               <Icon aria-hidden="true" className="size-4 md:size-6" />
@@ -86,14 +94,14 @@ export function MyStats() {
               </span>
               {title}
             </p>
-          </article>
+          </ContentCard>
         ))}
       </section>
     </main>
-  )
+  );
 }
 
-function DownloadAnimateUI({downloadShow} : {downloadShow: boolean}) {
+function DownloadAnimateUI({ downloadShow }: { downloadShow: boolean }) {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-6 z-50 flex justify-center">
       <AnimatePresence>
@@ -102,20 +110,27 @@ function DownloadAnimateUI({downloadShow} : {downloadShow: boolean}) {
             initial={{ opacity: 0, y: -40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -40, scale: 0.95 }}
-            transition={{ type: "spring", delay: 0.5, stiffness: 300, damping: 25 }}
+            transition={{
+              type: "spring",
+              delay: 0.5,
+              stiffness: 300,
+              damping: 25,
+            }}
             className="pointer-events-auto w-50 bg-white border border-[#ff5a3d] overflow-hidden rounded-xl shadow-xl"
             role="status"
           >
-            <div className="px-3 py-2 text-sm text-[#151618]/70 font-sans font-semibold">Downloading...</div>
-            <motion.div 
+            <div className="px-3 py-2 text-sm text-[#151618]/70 font-sans font-semibold">
+              Downloading...
+            </div>
+            <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 2, ease: "linear" }}
               className="h-1 origin-left bg-[#ff5a3d]"
             />
           </motion.div>
-        )}  
+        )}
       </AnimatePresence>
     </div>
-  )
+  );
 }

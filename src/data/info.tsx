@@ -38,6 +38,7 @@ type Project = {
   skills: string[];
   images: string[];
   description: string;
+  extraInfo: string;
   devtComplete: boolean;
 };
 
@@ -50,6 +51,7 @@ export const myProjects: Project[] = [
     images: [mainMe, secondMe, thirdMe],
     description:
       "A web app for comparing football players, sharing opinions, and sparking better football debates.",
+    extraInfo: "This project is still under development, but you can check out the repo for updates.",
     devtComplete: false,
   },
   {
@@ -60,6 +62,7 @@ export const myProjects: Project[] = [
     images: [mainMe, secondMe, thirdMe],
     description:
       "A web app for comparing football players, sharing opinions, and sparking better football debates.",
+    extraInfo: "This project is still under development, but you can check out the repo for updates.",
     devtComplete: true,
   },
   {
@@ -70,6 +73,7 @@ export const myProjects: Project[] = [
     images: [mainMe, secondMe, thirdMe],
     description:
       "A web app for comparing football players, sharing opinions, and sparking better football debates.",
+    extraInfo: "This is  project i designed from figma and implemented using react and typescript. You can check out the repo for updates.",
     devtComplete: true,
   },
 ];
@@ -115,3 +119,18 @@ export const pillStyles = [
   "bg-[#fff7f3] text-[#b3432f] hover:bg-[#ff7a61] hover:text-white",
   "bg-[#ffe0d7] text-[#943322] hover:bg-[#d9412a] hover:text-white",
 ];
+
+export const aboutSlides = [
+  {
+    image: mainMe,
+    alt: "A photo of me, smiling and looking confident.",
+  },
+  {
+    image: secondMe,
+    alt: "A photo of me, smiling and looking confident.",
+  },
+  {
+    image: thirdMe,
+    alt: "A photo of me, smiling and looking confident.",
+  }
+]
