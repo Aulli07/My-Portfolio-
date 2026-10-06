@@ -14,8 +14,8 @@ export function FirstView() {
 
   function handleDownload() {
     const d = document.createElement("a");
-    d.href = "My Resume.pdf";
-    d.download = myCV;
+    d.href = myCV;
+    d.download = "Alwell CV.pdf";
     d.click();
 
     setDownloadShow(true);
