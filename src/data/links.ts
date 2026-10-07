@@ -19,13 +19,13 @@ export const primaryLinks: { label: string; icon: IconName; href: string }[] = [
 ];
 
 export const socialLinks: { label: string; icon: IconName; href: string }[] = [
-  { label: "Call me", icon: "phone", href: "tel:+1234567890" },
-  { label: "Send mail", icon: "email", href: "chukwukaaulli@gmail.com" },
-  { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/" },
-  { label: "WhatsApp", icon: "whatsapp", href: "https://wa.me/" },
-  { label: "X (Twitter)", icon: "twitter", href: "https://x.com/" },
-  { label: "GitHub", icon: "github", href: "https://github.com/" },
-  { label: "Facebook", icon: "facebook", href: "https://facebook.com/" },
+  { label: "Call me", icon: "phone", href: "tel:+2347068634604" },
+  { label: "Send mail", icon: "email", href: "mailto:chukwukaaulli@gmail.com" },
+  { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/alwell-chukwuka" },
+  { label: "WhatsApp", icon: "whatsapp", href: "https://wa.me/2349153211007?text=Hi%20Alwell!" },
+  { label: "X (Twitter)", icon: "twitter", href: "https://x.com/c_aulli" },
+  { label: "GitHub", icon: "github", href: "https://github.com/Aulli07" },
+  { label: "Facebook", icon: "facebook", href: "https://facebook.com/profile.php?id=61588795782793" },
 ];
 
 export type IconName =

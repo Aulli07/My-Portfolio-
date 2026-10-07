@@ -4,7 +4,7 @@ import { Reveal } from "./components/reveal";
 
 import { Header } from "./ui/header";
 import { FirstView } from "./ui/first-view";
-import { MyStats } from "./ui/first-view";
+// import { MyStats } from "./ui/first-view";
 import { AboutMe } from "./ui/about";
 import { BuildClasses } from "./ui/services";
 
@@ -19,7 +19,7 @@ export function App() {
     <main className="font-heading py-3 min-h-screen">
       <Header />
       <FirstView />
-      <MyStats />
+      {/* <MyStats /> */}
       <Reveal><AboutMe /></Reveal>
       <Reveal><BuildClasses /></Reveal>
       <Suspense fallback={<div className="animate-pulse rounded-xl" />}>
